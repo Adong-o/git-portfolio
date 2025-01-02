@@ -683,21 +683,17 @@ function cleanHTML(html) {
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
     doc.body.appendChild(script);
     
-    // Clean up any other dynamic elements
     const switchBioBtn = doc.querySelector('.switch-bio-btn');
     if (switchBioBtn) switchBioBtn.remove();
     
     return doc.documentElement.outerHTML;
 }
 
-// Add event listener for download button
 document.addEventListener('DOMContentLoaded', () => {
-    // Add JSZip library
     const script = document.createElement('script');
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
     document.head.appendChild(script);
     
-    // Add download button listener
     const downloadBtn = document.getElementById('download-button');
     downloadBtn.addEventListener('click', downloadPortfolio);
 });
